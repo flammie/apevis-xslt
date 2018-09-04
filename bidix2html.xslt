@@ -20,32 +20,63 @@
     <html>
       <head>
         <meta charset="utf-8"/>
-          <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-          <meta name="viewport" content="width=device-width"/>
-          <title>apertium-<xsl:value-of select="$pair"/> :
-            Apertium-<xsl:value-of select="$pair"/> bilingual dictionary
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+          <!-- Begin Jekyll SEO tag v2.5.0 -->
+        <title>
+          apertium-<xsl:value-of select="$pair"/> :
+          Apertium-<xsl:value-of select="$pair"/> bilingual dictionary
         </title>
+        <meta name="generator" content="apevis-xslt"/>
+        <meta property="og:title">
+          <xsl:attribute name="content">
+            apertium-<xsl:value-of select="$pair"/>
+          </xsl:attribute>
+        </meta>
+        <meta property="og:locale" content="en"/>
         <meta name="description">
           <xsl:attribute name="content">
             <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
             dictionary for rule-based machine translation
           </xsl:attribute>
         </meta>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
-        <link rel="stylesheet">
+        <link rel="canonical">
           <xsl:attribute name="href">
-            <xsl:value-of select="'/apertium-'"/>
-            <xsl:value-of select="$pair"/>
-            <xsl:value-of select="'/css/main.css'"/>
+            https://apertium.github.io/apertium-<xsl:value-of select="$pair"/>/
           </xsl:attribute>
         </link>
-        <link rel="stylesheet">
-          <xsl:attribute name="href">
-            <xsl:value-of select="'/apertium-'"/>
-            <xsl:value-of select="$pair"/>
-            <xsl:value-of select="'/css/syntax.css'"/>
+        <meta property="og:url">
+          <xsl:attribute name="content">
+            https://apertium.github.io/apertium-<xsl:value-of select="$pair"/>/
           </xsl:attribute>
+        </meta>
+        <meta property="og:site_name">
+          <xsl:attribute name="content">
+            apertium-<xsl:value-of select="$pair"/>
+          </xsl:attribute>
+        </meta>
+        <script type="application/ld+json">
+          {"headline":"Apertium-<xsl:value-of select="$pair"/>",
+          "@type":"WebSite",
+          "url":"http://apertium.github.io/apertium-<xsl:value-of select="$pair"/>/",
+          "name":"apertium-<xsl:value-of select="$pair"/>",
+          "description":"Apertium bilingual data for <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/> machine translation",
+          "@context":"http://schema.org"}
+        </script>
+        <!-- End Jekyll SEO tag -->
+        <link rel="stylesheet">
+          <xsl:attribute name="href">/apertium-<xsl:value-of select="$pair"/>/assets/css/style.css?v=0553eb4429e442aa5eeaa159606840983213fbbe</xsl:attribute>
         </link>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <script>
+          <xsl:attribute name="src">/apertium-<xsl:value-of select="$pair"/>/assets/js/respond.js</xsl:attribute>
+        </script>
+        <!--[if lt IE 9]>
+          <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <!--[if lt IE 8]>
+        <link rel="stylesheet" href="/apertium-fin-deu/assets/css/ie.css">
+        <![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
       </head>
       <body>
         <div class="container">
