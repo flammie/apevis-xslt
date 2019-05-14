@@ -75,170 +75,56 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
       </head>
       <body>
-        <div class="container">
-          <div class="row">
-            <div id="header" class="col-sm-12">
-              <h4>
-                <a class="brand">
-                  <xsl:attribute name="href">
-                    <xsl:value-of select="'/apertium-'"/>
-                    <xsl:value-of select="$pair"/>
-                    <xsl:value-of select="'/'"/>
-                  </xsl:attribute>
-                  <xsl:value-of select="'apertium-'"/>
-                  <xsl:value-of select="$pair"/>
-                </a>
-                <small>
-                  <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
-                  rules for machine translation
-                </small>
-              </h4>
-            </div>
-          </div>
-          <div class="row">
-            <div id="navigation" class="col-sm-2">
-              <nav>
-                <ul class="nav nav-list">
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                    </xsl:attribute>
-                    Home
-                  </a></li>
-                  <li><a class="external">
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'//github.com/apertium/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'/#readme'"/>
-                    </xsl:attribute>
-                    README
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'statistics.html'"/>
-                    </xsl:attribute>
-                    Statistics
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.dix.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
-                    dictionary
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.t1x.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
-                    chunking rules (t1x)
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.t2x.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
-                    re-ordering rules (t2x)
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.t3x.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
-                    t3x rules
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$antipair"/>
-                      <xsl:value-of select="'.dix.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$to"/>–<xsl:value-of select="$from"/>
-                    dictionary
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$antipair"/>
-                      <xsl:value-of select="'.t1x.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$to"/>–<xsl:value-of select="$from"/>
-                    chunking rules (t1x)
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$antipair"/>
-                      <xsl:value-of select="'.t2x.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$to"/>–<xsl:value-of select="$from"/>
-                    re-ordering rules (t2x)
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$antipair"/>
-                      <xsl:value-of select="'.t3x.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$to"/>–<xsl:value-of select="$from"/>
-                    t3x rules
-                  </a></li>
-                </ul>
-              </nav>
-            </div>
-            <div id="content" class="col-sm-10">
-              <h1 id="rules">
-                Apertium-<xsl:value-of select="$pair"/>:
-                <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
-                machine translation rules
-              </h1>
-              <p style="font-variant: italic">
-                This is a visualisation of an apertium transfer system
-              </p>
-              <xsl:apply-templates/>
-            </div>
-          </div>
-          <div class="row">
-            <div id="footer" class="col-sm-12">
-              Documentation for <a>
-                <xsl:attribute name="href">
-                  <xsl:value-of select="'//github.com/apertium/apertium-'"/>
-                  <xsl:value-of select="$pair"/>
-                  <xsl:value-of select="'/'"/>
-                </xsl:attribute>
-                apertium-<xsl:value-of select="$pair"/>
-                Generated with <a
-                  href="https://github.com/flammie/apevis-xslt">Flammie’s
-                  apevis-xslt</a>.
+        <div id="header">
+          <nav>
+            <li class="fork">
+              <a>
+                <xsl:attribute name="href">https://github.com/apertium/apertium-<xsl:value-of select="$pair"/></xsl:attribute>
+                  View On GitHub
               </a>
+            </li>
+          </nav>
+        </div><!-- end header -->
+        <div class="wrapper">
+          <section>
+            <div id="title">
+              <h1>apertium-<xsl:value-of select="$pair"/></h1>
+              <p>
+                <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
+                dictionary for rule-based machine translation
+              </p>
+              <hr/>
+              <span class="credits left">
+                Project maintained by 
+                <a href="https://github.com/apertium">apertium</a>
+              </span>
+              <span class="credits right">
+                Hosted on GitHub Pages – Theme by
+                <a href="https://twitter.com/michigangraham">mattgraham</a>
+              </span>
             </div>
+            <h1 id="rules">
+              Apertium-<xsl:value-of select="$pair"/>:
+              <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
+              machine translation rules
+            </h1>
+            <p style="font-variant: italic">
+              This is a visualisation of some rules in apertium transfer.
+            </p>
+            <xsl:apply-templates/>
+          </section>
+          <div id="footer">
+            Documentation for <a>
+              <xsl:attribute name="href">
+                <xsl:value-of select="'//github.com/apertium/apertium-'"/>
+                <xsl:value-of select="$pair"/>
+                <xsl:value-of select="'/'"/>
+              </xsl:attribute>
+              apertium-<xsl:value-of select="$pair"/>
+            </a>
+            Generated with <a
+              href="https://github.com/flammie/apevis-xslt">Flammie’s
+              apevis-xslt</a>.
           </div>
         </div>
       </body>

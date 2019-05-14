@@ -33,8 +33,7 @@
     <html>
       <head>
         <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <meta name="viewport" content="width=device-width"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <title>
           apertium-<xsl:value-of select="$langcode"/> :
           monolingual dictionary (letter <xsl:value-of select="$letter"/>)
@@ -45,213 +44,92 @@
             dictionary for rule-based machine translation
           </xsl:attribute>
         </meta>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
-        <link rel="stylesheet">
+        <link rel="canonical">
           <xsl:attribute name="href">
-            <xsl:value-of select="'/apertium-'"/>
-            <xsl:value-of select="$langcode"/>
-            <xsl:value-of select="'/css/main.css'"/>
+            http://apertium.github.io/apertium-<xsl:value-of select="$langcode"/>
           </xsl:attribute>
         </link>
         <link rel="stylesheet">
           <xsl:attribute name="href">
             <xsl:value-of select="'/apertium-'"/>
             <xsl:value-of select="$langcode"/>
-            <xsl:value-of select="'/css/syntax.css'"/>
+            <xsl:value-of select="'/assets/css/style.css'"/>
           </xsl:attribute>
         </link>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+          integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+          crossorigin="anonymous"></script>
+        <script>
+          <xsl:attribute name="src">/apertium-<xsl:value-of select="$langcode"/>/assets/js/respond.js</xsl:attribute>
+        </script>
+        <meta name="viewport" 
+          content="width=device-width, initial-scale=1, user-scalable=no"/>
       </head>
       <body>
-        <div class="container">
-          <div class="row">
-            <div id="header" class="col-sm-12">
-              <h4>
-                <a class="brand">
-                  <xsl:attribute name="href">
-                    <xsl:value-of select="'/apertium-'"/>
-                    <xsl:value-of select="$langcode"/>
-                    <xsl:value-of select="'/'"/>
-                  </xsl:attribute>
-                  <xsl:value-of select="'apertium-'"/>
-                  <xsl:value-of select="$langcode"/>
-                </a>
-                <small>
-                  <xsl:value-of select="$language"/>
-                  dictionary for rule-based machine translation
-                </small>
-              </h4>
-            </div>
-          </div>
-          <div class="row">
-            <div id="navigation" class="col-sm-2">
-              <nav>
-                <ul class="nav nav-list">
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$langcode"/>
-                    </xsl:attribute>
-                    Home
-                  </a></li>
-                  <li><a class="external">
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'//github.com/apertium/apertium-'"/>
-                      <xsl:value-of select="$langcode"/>
-                      <xsl:value-of select="'/#readme'"/>
-                    </xsl:attribute>
-                    README
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$langcode"/>
-                      <xsl:value-of select="'/statistics.html'"/>
-                    </xsl:attribute>
-                    Statistics
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$langcode"/>
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$langcode"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$langcode"/>
-                      <xsl:value-of select="'.dix.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$language"/> dictionary index
-                    </a><ul>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'a'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'b'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'c'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'d'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'e'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'f'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'g'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'h'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'i'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'j'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'k'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'l'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'m'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'n'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'o'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'p'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'q'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'r'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'s'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'t'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'u'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'v'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'w'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'x'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'y'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'z'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'å'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'ä'"/>
-                      </xsl:call-template></li>
-                      <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'ö'"/>
-                      </xsl:call-template></li>
-                    </ul>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div id="content" class="col-sm-10">
-              <h1 id="dictionary">
-                Apertium-<xsl:value-of select="$langcode"/>:
-                <xsl:value-of select="$language"/> dictionary
-                (letter <xsl:value-of select="$letter"/>)
-              </h1>
-              <p style="font-variant: italic">
-                This dictionary has been generated automatically from the XML
-                dictionary data. It is intended for visualisation. Please find
-                the machine-readable source codes in <a>
-                  <xsl:attribute name="href">
-                    <xsl:value-of select="'https://github.com/apertium/apertium-'"/>
-                    <xsl:value-of select="$langcode"/>
-                  </xsl:attribute>
-                  apertium repository for <xsl:value-of select="$language"/>
-                </a>.
+        <div id="header">
+          <nav>
+            <li class="fork">
+              <a>
+                <xsl:attribute name="href">https://github.com/apertium/apertium-<xsl:value-of select="$langcode"/></xsl:attribute>
+                  View On GitHub
+              </a>
+            </li>
+          </nav>
+        </div><!-- end header -->
+        <div class="wrapper">
+          <section>
+
+            <div id="title">
+              <h1>apertium-<xsl:value-of select="$langcode"/></h1>
+              <p>
+                <xsl:value-of select="$language"/> monolingual data and
+                morphological analyser-generator for apertium
               </p>
-              <h2>Alphabets</h2>
-              <xsl:apply-templates select="alphabet"/>
-              <h2>Apertium tags (for POS and MSD features)</h2>
-              <xsl:apply-templates select="sdefs"/>
-              <h2>Words</h2>
-              <xsl:apply-templates select="section"/>
+              <hr/>
+              <span class="credits left">
+                Project maintained by 
+                <a href="https://github.com/apertium">apertium</a>
+              </span>
+              <span class="credits right">
+                Hosted on GitHub Pages – Theme by
+                <a href="https://twitter.com/michigangraham">mattgraham</a>
+              </span>
             </div>
-          </div>
-          <div class="row">
-            <div id="footer" class="col-sm-12">
-              Documentation for <a>
+            <h1 id="dictionary">
+              Apertium-<xsl:value-of select="$langcode"/>:
+              <xsl:value-of select="$language"/> dictionary
+              (letter <xsl:value-of select="$letter"/>)
+            </h1>
+            <p style="font-variant: italic">
+              This page has been generated automatically from the XML
+              dictionary data. It is intended for visualisation / overview. Please find
+              the machine-readable source codes in <a>
                 <xsl:attribute name="href">
-                  <xsl:value-of select="'//github.com/apertium/apertium-'"/>
+                  <xsl:value-of select="'https://github.com/apertium/apertium-'"/>
                   <xsl:value-of select="$langcode"/>
-                  <xsl:value-of select="'/'"/>
                 </xsl:attribute>
-                apertium-<xsl:value-of select="$langcode"/>
+                apertium repository for <xsl:value-of select="$language"/>
               </a>.
-                Generated with <a
-                  href="https://github.com/flammie/apevis-xslt">Flammie’s
-                  apevis-xslt</a>.
-            </div>
+            </p>
+            <h2>Alphabets</h2>
+            <xsl:apply-templates select="alphabet"/>
+            <h2>Apertium tags (for POS and MSD features)</h2>
+            <xsl:apply-templates select="sdefs"/>
+            <h2>Words</h2>
+            <xsl:apply-templates select="section"/>
+          </section>
+          <div id="footer">
+            Documentation for <a>
+              <xsl:attribute name="href">
+                <xsl:value-of select="'//github.com/apertium/apertium-'"/>
+                <xsl:value-of select="$langcode"/>
+                <xsl:value-of select="'/'"/>
+              </xsl:attribute>
+              apertium-<xsl:value-of select="$langcode"/>
+            </a>.
+              Generated with <a
+                href="https://github.com/flammie/apevis-xslt">Flammie’s
+                apevis-xslt</a>.
           </div>
         </div>
       </body>

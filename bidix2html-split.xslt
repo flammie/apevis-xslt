@@ -117,364 +117,69 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
       </head>
       <body>
-        <div class="container">
-          <div class="row">
-            <div id="header" class="col-sm-12">
-              <h4>
-                <a class="brand">
-                  <xsl:attribute name="href">
-                    <xsl:value-of select="'/apertium-'"/>
-                    <xsl:value-of select="$pair"/>
-                    <xsl:value-of select="'/'"/>
-                  </xsl:attribute>
-                  <xsl:value-of select="'apertium-'"/>
-                  <xsl:value-of select="$pair"/>
-                </a>
-                <small>
-                  <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
-                  dictionary for rule-based machine translation
-                </small>
-                </h4>
-            </div>
-          </div>
-          <div class="row">
-            <div id="navigation" class="col-sm-2">
-              <nav>
-                <ul class="nav nav-list">
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                    </xsl:attribute>
-                    Home
-                  </a></li>
-                  <li><a class="external">
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'//github.com/apertium/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'/#readme'"/>
-                    </xsl:attribute>
-                    README
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'/statistics.html'"/>
-                    </xsl:attribute>
-                    Statistics
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.dix.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
-                    dictionary
-                  </a><ul>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'a'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'b'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'c'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'d'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'e'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'f'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'g'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'h'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'i'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'j'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'k'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'l'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'m'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'n'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'o'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'p'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'q'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'r'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'s'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'t'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'u'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'v'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'w'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'x'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'y'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'z'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'ä'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlink">
-                          <xsl:with-param name="l" select="'ö'"/>
-                      </xsl:call-template></li>
-                    </ul>
-                  </li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.t1x.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
-                    chunking rules (t1x)
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.t2x.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
-                    re-ordering rules (t2x)
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.t3x.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
-                    t3x rules
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$antipair"/>
-                      <xsl:value-of select="'.dix.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$to"/>–<xsl:value-of select="$from"/>
-                    dictionary
-                  </a><ul>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'a'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'b'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'c'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'d'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'e'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'f'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'g'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'h'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'i'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'j'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'k'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'l'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'m'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'n'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'o'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'p'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'q'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'r'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'s'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'t'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'u'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'v'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'w'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'x'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'y'"/>
-                      </xsl:call-template></li>
-                    <li><xsl:call-template name="letterlinkrev">
-                          <xsl:with-param name="l" select="'z'"/>
-                      </xsl:call-template></li>
-                  </ul></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$antipair"/>
-                      <xsl:value-of select="'.t1x.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$to"/>–<xsl:value-of select="$from"/>
-                    chunking rules (t1x)
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$antipair"/>
-                      <xsl:value-of select="'.t2x.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$to"/>–<xsl:value-of select="$from"/>
-                    re-ordering rules (t2x)
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$antipair"/>
-                      <xsl:value-of select="'.t3x.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$to"/>–<xsl:value-of select="$from"/>
-                    t3x rules
-                  </a></li>
-                </ul>
-              </nav>
-            </div>
-            <div id="content" class="col-sm-10">
-              <h1 id="dictionary">
-                Apertium-<xsl:value-of select="$pair"/>:
-                <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
-                bilingual dictionary
-              </h1>
-              <p style="font-variant: italic">
-                This dictionary has been generated automatically from the XML
-                dictionary data. It is intended for visualisation. Please find
-                the machine-readable source codes in <a>
-                  <xsl:attribute name="href">
-                    <xsl:value-of select="'https://github.com/apertium/apertium-'"/>
-                    <xsl:value-of select="$pair"/>
-                  </xsl:attribute>
-                  apertium repository for <xsl:value-of select="$pair"/>
-                </a>.
-              </p>
-              <h2>Alphabets</h2>
-              <xsl:apply-templates select="alphabet"/>
-              <h2>Apertium tags (for POS and MSD features)</h2>
-              <xsl:apply-templates select="sdefs"/>
-              <h2>Words</h2>
-              <xsl:apply-templates select="section"/>
-            </div>
-          </div>
-          <div class="row">
-            <div id="footer" class="col-sm-12">
-              Documentation for <a>
-                <xsl:attribute name="href">
-                  <xsl:value-of select="'//github.com/apertium/apertium-'"/>
-                  <xsl:value-of select="$pair"/>
-                  <xsl:value-of select="'/'"/>
-                </xsl:attribute>
-                apertium-<xsl:value-of select="$pair"/>
-                Generated with <a
-                  href="https://github.com/flammie/apevis-xslt">Flammie’s
-                  apevis-xslt</a>.
+        <div id="header">
+          <nav>
+            <li class="fork">
+              <a>
+                <xsl:attribute name="href">https://github.com/apertium/apertium-<xsl:value-of select="$pair"/></xsl:attribute>
+                  View On GitHub
               </a>
+            </li>
+          </nav>
+        </div><!-- end header -->
+        <div class="wrapper">
+          <section>
+            <div id="title">
+              <h1>apertium-<xsl:value-of select="$pair"/></h1>
+              <p>
+                <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
+                dictionary for rule-based machine translation
+              </p>
+              <hr/>
+              <span class="credits left">
+                Project maintained by 
+                <a href="https://github.com/apertium">apertium</a>
+              </span>
+              <span class="credits right">
+                Hosted on GitHub Pages – Theme by
+                <a href="https://twitter.com/michigangraham">mattgraham</a>
+              </span>
             </div>
+            <h1 id="dictionary">
+              Apertium-<xsl:value-of select="$pair"/>:
+              <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
+              bilingual dictionary (letter <xsl:value-of select="$letter"/>)
+            </h1>
+            <p style="font-variant: italic">
+              This page has been generated automatically from the XML
+              dictionary data. It is intended for visualisation. Please find
+              the machine-readable source codes in <a>
+                <xsl:attribute name="href">
+                  <xsl:value-of select="'https://github.com/apertium/apertium-'"/>
+                  <xsl:value-of select="$pair"/>
+                </xsl:attribute>
+                apertium repository for <xsl:value-of select="$pair"/>
+              </a>.
+            </p>
+            <h2>Alphabets</h2>
+            <xsl:apply-templates select="alphabet"/>
+            <h2>Apertium tags (for POS and MSD features)</h2>
+            <xsl:apply-templates select="sdefs"/>
+            <h2>Words</h2>
+            <xsl:apply-templates select="section"/>
+          </section>
+          <div id="footer">
+            Documentation for <a>
+              <xsl:attribute name="href">
+                <xsl:value-of select="'//github.com/apertium/apertium-'"/>
+                <xsl:value-of select="$pair"/>
+                <xsl:value-of select="'/'"/>
+              </xsl:attribute>
+              apertium-<xsl:value-of select="$pair"/>
+            </a>
+            Generated with <a
+                href="https://github.com/flammie/apevis-xslt">Flammie’s
+                apevis-xslt</a>.
           </div>
         </div>
       </body>
