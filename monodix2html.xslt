@@ -13,12 +13,9 @@
 
 
   <xsl:template match="dictionary">
-    <!-- lot of c/p from the jekyll outp  {{{ -->
     <html>
       <head>
         <meta charset="utf-8"/>
-          <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-          <meta name="viewport" content="width=device-width"/>
         <title>
           apertium-<xsl:value-of select="$pair"/> :
           monolingual dictionary
@@ -29,124 +26,79 @@
             dictionary for rule-based machine translation
           </xsl:attribute>
         </meta>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
-        <link rel="stylesheet">
-          <xsl:attribute name="href">
-            <xsl:value-of name="'/apertium-'"/>
-            <xsl:value-of name="$langcode"/>
-            <xsl:value-of name="'/css/main.css'"/>
-          </xsl:attribute>
-        </link>
-        <link rel="stylesheet">
-          <xsl:attribute name="href">
-            <xsl:value-of name="'/apertium-'"/>
-            <xsl:value-of name="$langcode"/>
-            <xsl:value-of name="'/css/syntax.css'"/>
-          </xsl:attribute>
-        </link>
       </head>
       <body>
-        <div class="container">
-          <div class="row">
-            <div id="header" class="col-sm-12">
-              <h4>
-                <a class="brand">
-                  <xsl:attribute name="href">
-                    <xsl:value-of select="'/apertium-'"/>
-                    <xsl:value-of select="$langcode"/>
-                    <xsl:value-of select="'/'"/>
-                  </xsl:attribute>
-                  <xsl:value-of select="'apertium-'"/>
-                  <xsl:value-of select="$langcode"/>
-                </a>
-                <small>
-                  <xsl:value-of select="$language"/>
-                  dictionary for rule-based machine translation
-                </small>
-              </h4>
-            </div>
-          </div>
-          <div class="row">
-            <div id="navigation" class="col-sm-2">
-             <nav>
-                <ul class="nav nav-list">
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$pair"/>
-                    </xsl:attribute>
-                    Home
-                  </a></li>
-                  <li><a class="external">
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'//github.com/apertium/apertium-'"/>
-                      <xsl:value-of select="$langcode"/>
-                      <xsl:value-of select="'/#readme'"/>
-                    </xsl:attribute>
-                    README
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$langcode"/>
-                      <xsl:value-of select="'statistics.html'"/>
-                    </xsl:attribute>
-                    Statistics
-                  </a></li>
-                  <li><a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="'/apertium-'"/>
-                      <xsl:value-of select="$langcode"/>
-                      <xsl:value-of select="'.'"/>
-                      <xsl:value-of select="$langcode"/>
-                      <xsl:value-of select="'.dix.html'"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="$language"/> dictionary
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div id="content" class="col-sm-10">
-              <h1 id="dictionary">
-                Apertium-<xsl:value-of select="$langcode"/>:
-                <xsl:value-of select="$language"/> dictionary
-              </h1>
-              <p style="font-variant: italic">
-                This dictionary has been generated automatically from the XML
-                dictionary data. It is intended for visualisation. Please find
-                the machine-readable source codes in <a>
-                  <xsl:attribute name="href">
-                    <xsl:value-of select="'https://github.com/apertium/apertium-'"/>
-                    <xsl:value-of select="$langcode"/>
-                  </xsl:attribute>
-                  apertium repository for <xsl:value-of select="$language"/>
-                </a>.
-              </p>
-              <h2>Alphabets</h2>
-              <xsl:apply-templates select="alphabet"/>
-              <h2>Apertium tags (for POS and MSD features)</h2>
-              <xsl:apply-templates select="sdefs"/>
-              <h2>Words</h2>
-              <xsl:apply-templates select="section"/>
-            </div>
-          </div>
-          <div class="row">
-            <div id="footer" class="col-sm-12">
-              Documentation for <a>
-                <xsl:attribute name="href">
-                  <xsl:value-of select="'//github.com/apertium/apertium-'"/>
-                  <xsl:value-of select="$langcode"/>
-                  <xsl:value-of select="'/'"/>
-                </xsl:attribute>
-                apertium-<xsl:value-of select="$langcode"/>.
-                Generated with <a
-                  href="https://github.com/flammie/apevis-xslt">Flammie’s
-                  apevis-xslt</a>.
-              </a>.
-            </div>
-          </div>
-        </div>
+       <nav>
+          <ul class="nav nav-list">
+            <li><a>
+              <xsl:attribute name="href">
+                <xsl:value-of select="'/apertium-'"/>
+                <xsl:value-of select="$pair"/>
+              </xsl:attribute>
+              Home
+            </a></li>
+            <li><a class="external">
+              <xsl:attribute name="href">
+                <xsl:value-of select="'//github.com/apertium/apertium-'"/>
+                <xsl:value-of select="$langcode"/>
+                <xsl:value-of select="'/#readme'"/>
+              </xsl:attribute>
+              README
+            </a></li>
+            <li><a>
+              <xsl:attribute name="href">
+                <xsl:value-of select="'/apertium-'"/>
+                <xsl:value-of select="$langcode"/>
+                <xsl:value-of select="'statistics.html'"/>
+              </xsl:attribute>
+              Statistics
+            </a></li>
+            <li><a>
+              <xsl:attribute name="href">
+                <xsl:value-of select="'/apertium-'"/>
+                <xsl:value-of select="$langcode"/>
+                <xsl:value-of select="'.'"/>
+                <xsl:value-of select="$langcode"/>
+                <xsl:value-of select="'.dix.html'"/>
+              </xsl:attribute>
+              <xsl:value-of select="$language"/> dictionary
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <h1 id="dictionary">
+          Apertium-<xsl:value-of select="$langcode"/>:
+          <xsl:value-of select="$language"/> dictionary
+        </h1>
+        <p style="font-variant: italic">
+          This dictionary has been generated automatically from the XML
+          dictionary data. It is intended for visualisation. Please find
+          the machine-readable source codes in <a>
+            <xsl:attribute name="href">
+              <xsl:value-of select="'https://github.com/apertium/apertium-'"/>
+              <xsl:value-of select="$langcode"/>
+            </xsl:attribute>
+            apertium repository for <xsl:value-of select="$language"/>
+          </a>.
+        </p>
+        <h2>Alphabets</h2>
+        <xsl:apply-templates select="alphabet"/>
+        <h2>Apertium tags (for POS and MSD features)</h2>
+        <xsl:apply-templates select="sdefs"/>
+        <h2>Words</h2>
+        <xsl:apply-templates select="section"/>
+        <hr title="Start of metadata"/>
+        Documentation for <a>
+          <xsl:attribute name="href">
+            <xsl:value-of select="'//github.com/apertium/apertium-'"/>
+            <xsl:value-of select="$langcode"/>
+            <xsl:value-of select="'/'"/>
+          </xsl:attribute>
+          apertium-<xsl:value-of select="$langcode"/>.
+          Generated with <a
+            href="https://github.com/flammie/apevis-xslt">Flammie’s
+            apevis-xslt</a>.
+        </a>.
       </body>
     </html>
   </xsl:template>
