@@ -14,12 +14,9 @@
   <xsl:param name="version"/>
 
   <xsl:template match="transfer|interchunk|postchunk">
-    <!-- lot of c/p from the jekyll outp  {{{ -->
     <html>
       <head>
         <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-          <!-- Begin Jekyll SEO tag v2.5.0 -->
         <title>
           apertium-<xsl:value-of select="$pair"/> :
           Apertium-<xsl:value-of select="$pair"/> bilingual rules and resources
@@ -60,22 +57,8 @@
           "description":"Apertium bilingual data for <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/> machine translation",
           "@context":"http://schema.org"}
         </script>
-        <!-- End Jekyll SEO tag -->
-        <link rel="stylesheet">
-          <xsl:attribute name="href">/apertium-<xsl:value-of select="$pair"/>/assets/css/style.css?v=0553eb4429e442aa5eeaa159606840983213fbbe</xsl:attribute>
-        </link>
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-        <script src="/apertium-fin-deu/assets/js/respond.js"></script>
-        <!--[if lt IE 9]>
-          <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <!--[if lt IE 8]>
-        <link rel="stylesheet" href="/apertium-fin-deu/assets/css/ie.css">
-        <![endif]-->
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
       </head>
       <body>
-        <div id="header">
           <nav>
             <li class="fork">
               <a>
@@ -84,25 +67,6 @@
               </a>
             </li>
           </nav>
-        </div><!-- end header -->
-        <div class="wrapper">
-          <section>
-            <div id="title">
-              <h1>apertium-<xsl:value-of select="$pair"/></h1>
-              <p>
-                <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
-                dictionary for rule-based machine translation
-              </p>
-              <hr/>
-              <span class="credits left">
-                Project maintained by 
-                <a href="https://github.com/apertium">apertium</a>
-              </span>
-              <span class="credits right">
-                Hosted on GitHub Pages – Theme by
-                <a href="https://twitter.com/michigangraham">mattgraham</a>
-              </span>
-            </div>
             <h1 id="rules">
               Apertium-<xsl:value-of select="$pair"/>:
               <xsl:value-of select="$from"/>–<xsl:value-of select="$to"/>
@@ -112,8 +76,7 @@
               This is a visualisation of some rules in apertium transfer.
             </p>
             <xsl:apply-templates/>
-          </section>
-          <div id="footer">
+            <hr title="metadata starts"/>
             Documentation for <a>
               <xsl:attribute name="href">
                 <xsl:value-of select="'//github.com/apertium/apertium-'"/>
@@ -125,8 +88,6 @@
             Generated with <a
               href="https://github.com/flammie/apevis-xslt">Flammie’s
               apevis-xslt</a>.
-          </div>
-        </div>
       </body>
     </html>
   </xsl:template>
