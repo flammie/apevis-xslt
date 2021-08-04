@@ -53,7 +53,6 @@
 
 
   <xsl:template match="dictionary">
-    <!-- lot of c/p from the jekyll outp  {{{ -->
     <html>
       <head>
         <meta charset="utf-8"/>
