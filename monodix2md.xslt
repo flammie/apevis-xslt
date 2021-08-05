@@ -29,6 +29,10 @@ in [apertium repository for
 
 <xsl:apply-templates select="sdefs"/>
 
+## Paradigms
+
+<xsl:apply-templates select="pardefs"/>
+
 ## Words
 
 Words below are split by apertium dictionary sections and sorted in
@@ -59,6 +63,25 @@ Apertium will use following letters as alphabets in its tokenisation:
 
   <xsl:template match="sdef">| `&lt;<xsl:value-of select="@n"/>&gt;` | <xsl:value-of select="@c"/> |<xsl:text>&#xa;</xsl:text></xsl:template>
 
+  <xsl:template match="pardefs">
+
+Paradigms are inflectional classes.
+
+<xsl:apply-templates/>
+  </xsl:template>
+
+  <xsl:template match="pardef">
+
+#### `<xsl:value-of select="@n"/>`
+
+<xsl:value-of select="@c"/>
+
+| RL  | <xsl:value-of select="$language"/> | Paradigm | Comments |
+|:---:|:-----------------------------------|:---------|:---------|
+<xsl:apply-templates/>
+
+  </xsl:template>
+  
   <xsl:template match="section">
 
     ### <xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@id"/>
@@ -154,7 +177,8 @@ Apertium will use following letters as alphabets in its tokenisation:
     
 #### <xsl:value-of select="$letter"/> or <xsl:value-of select="upper-case($letter)"/>
 
-| RL | <xsl:value-of select="$language"/> | Paradigm | Comments |
+| RL  | <xsl:value-of select="$language"/> | Paradigm | Comments |
+|:---:|:-----------------------------------|:---------|:---------|
 <xsl:apply-templates select="e[starts-with(p[1]/r[1], $letter)]|
           e[starts-with(p[1]/r[1], upper-case($letter))]|
           e[starts-with(i[1], upper-case($letter))]">
